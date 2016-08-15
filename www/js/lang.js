@@ -70,6 +70,7 @@ var zh = {
     index_menu_itme_2:"關於奇美",
     index_menu_itme_3:"產品搜尋",
     index_menu_itme_4:"聯絡我們",
+    index_menu_itme_5:"產品比較",
     index_version:"版本",
     
     // page1.html

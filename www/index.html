@@ -6,12 +6,15 @@
     <meta http-equiv="Content-Security-Policy" content="style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <link rel="stylesheet" href="components/loader.css">
-    
+
+  
     <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/OnsenUI/OnsenUI/2.0.0-alpha.15/build/css/onsenui.css'>
     <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/OnsenUI/OnsenUI/2.0.0-alpha.15/build/css/onsen-css-components.css'>
 
 
+
     <link rel="stylesheet prefetch" href="css/style.css">
+    
     <script src="components/loader.js"></script>
     <script src="js/jquery.min.js"></script>
   
@@ -20,9 +23,15 @@
     
     
     <script src='js/jquery.blockUI.js'></script>
-    
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
     <script src='js/app.js'></script>
     <script src='js/lang.js'></script>
+    
 </head>
 <body>
 
@@ -39,6 +48,9 @@
         </ons-list-item>
         <ons-list-item modifier="chevron" onclick="menu.setMainPage('page2-1.html', {closeMenu: true})">
           <span class="index_menu_itme_3">產品搜尋</span>
+        </ons-list-item>
+        <ons-list-item modifier="chevron" onclick="menu.setMainPage('page4.html', {closeMenu: true})">
+          <span class="index_menu_itme_5">產品比較</span>
         </ons-list-item>
         <ons-list-item modifier="chevron" onclick="menu.setMainPage('page3.html', {closeMenu: true})">
           <span class="index_menu_itme_4">聯絡我們</span>
@@ -59,6 +71,7 @@ ons.ready(function() {
         $(".index_menu_itme_2").text(translator.getStr("index_menu_itme_2"));
         $(".index_menu_itme_3").text(translator.getStr("index_menu_itme_3"));
         $(".index_menu_itme_4").text(translator.getStr("index_menu_itme_4"));
+        $(".index_menu_itme_5").text(translator.getStr("index_menu_itme_5"));
     }, 10);
 });
 </script>

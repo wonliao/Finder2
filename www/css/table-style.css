@@ -188,7 +188,7 @@ Main Components
 .cd-products-columns .product {
   position: relative;
   float: left;
-  width: 300px;
+  width: 200px;
   text-align: center;
   -webkit-transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
   -moz-transition: opacity 0.3s, visibility 0.3s, -moz-transform 0.3s;
@@ -220,11 +220,15 @@ Main Components
 .cd-features-list li {
   font-size: 1.4rem;
   font-weight: bold;
-  padding: 25px 40px;
+  /*padding: 25px 40px;*/
+  height:65px;
   border-color: #e6e6e6;
   border-style: solid;
   border-top-width: 1px;
   border-right-width: 1px;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .cd-features-list li.rate {
   /* rating stars */
@@ -252,8 +256,8 @@ Main Components
   font-size: 1.2rem;
   font-weight: bold;
   /* set line-height value equal to font-size of text inside product cells */
-  line-height: 14px;
-  padding: 25px 10px;
+  height: 65px;
+  padding: 0 10px;
   text-align: left;
 }
 @media only screen and (min-width: 1170px) {
@@ -268,7 +272,7 @@ Main Components
 
 .features .cd-features-list li {
   /* truncate text with dots */
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   text-overflow: ellipsis;
   overflow: hidden;
 }

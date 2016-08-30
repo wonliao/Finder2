@@ -59,6 +59,10 @@ var en = {
     page3_item_20:"Making Life More Convenient",
     page3_item_21:"Looking ahead to the future, we have established new materials research departments dedicated to investigation and development of new materials. We are realizing our vision of sustainable operation, enhancing added value for customers, making life more convenient, improving people's quality of life, and contributing to a brighter future.",
 
+    // page4-3.html
+    page4_3_item_1:"",
+    page4_3_item_2:"item found",
+    
     // home.html
     home_main_text:"bonding your moments"
 };
@@ -123,6 +127,10 @@ var zh = {
     page3_item_20:"創新應用 前瞻未來",
     page3_item_21:"奇美是全球第一家符合食品接觸塑料最嚴苛要求的供應商。我們的創新腳步 從不停歇,半世紀以來努力不懈的研發新原料,近年更投入高值化材料應用, 以期為人們創造更高品質、更美好愉悅的便利生活。",
 
+    // page2-3.html
+    page4_3_item_1:"共 ",
+    page4_3_item_2:"樣產品進行比對",
+    
     // home.html
     home_main_text:"精彩时刻 源自奇美"
 };

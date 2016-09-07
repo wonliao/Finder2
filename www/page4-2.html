@@ -33,14 +33,14 @@
     font-size: 2vw;
     width:100%; 
     font-size:6vw; padding:0 0 0 2%; 
-    height:10%;
+    /*height:10%;*/
 }
 
 .conditional_span {
-    line-height:8vh; 
+    /*line-height:8vh;*/
     display:inline-block;
     white-space:nowrap;
-    font-size: 3vw;
+    font-size: 3.7vw;
 }
 
 .conditional_button {
@@ -113,9 +113,22 @@
         
         <ons-row id="conditional_div"></ons-row>
 
-        <ons-button modifier="quiet" onclick="addConditional()">
+        <!--
+        <ons-button modifier="quiet" onclick="addConditional()" style="float:right; margin-right:1%;">
             <ons-icon icon="ion-plus-circled" size="4vh" fixed-width="true"></ons-icon>
         </ons-button>
+        -->
+        
+        <ons-row id="conditional_'+index+'" style="margin:15px 0 10px 0;">
+            <div style="width:40%; margin-left:2%; padding:0;"></div>
+            <div style="width:40%; margin-left:2%; padding:0;"></div>
+            <div onclick="addConditional()" class="text-input text-input--underbar conditional" style="width:15%; margin:auto; padding:0; text-align:center; border:none; float:left;">
+                <img src="images/plus.png" style="width:4vh; vertical-align:middle;"/>
+            </div>
+        </ons-row>
+
+
+
 
     <section class="cd-products-comparison-table">
     	
@@ -392,17 +405,19 @@ function addConditional() {
     var page4_2_default_value = translator.getStr("page4_2_default_value");
     
     var str = "";
-    str +=  '<ons-row id="conditional_'+index+'" style="margin-bottom:2px;">';
-    str +=      '<ons-button class="button button--large" modifier="chevron" style="width:80%; margin:0 0 0 5%;">';
-    str +=          '<div onclick="openSlot1('+index+')" class="text-input text-input--underbar conditional" style="width:48%; height:8vh; float:left; color:#fff; margin-right:2%;">';
+    str +=  '<ons-row id="conditional_'+index+'" style="margin-bottom:5px;">';
+    str +=      '<ons-button class="button button--large" modifier="chevron" style="width:40%; margin-left:2%; padding:0;">';
+    str +=          '<div onclick="openSlot1('+index+')" class="text-input text-input--underbar conditional" style="width:100%; float:left; color:#fff; margin-right:2%;">';
     str +=              '<span id="slot1_result_'+index+'" class="conditional_span input_name page4_2_default_name">'+page4_2_default_name+'</span>';
     str +=          '</div>';
-    str +=          '<div onclick="openSlot2('+index+')" class="text-input text-input--underbar conditional" style="width:48%; height:8vh; float:left; color:#fff;">';
+    str +=      '</ons-button>';
+    str +=      '<ons-button class="button button--large" modifier="chevron" style="width:40%; margin-left:2%; padding:0">';
+    str +=          '<div onclick="openSlot2('+index+')" class="text-input text-input--underbar conditional" style="width:100%; float:left; color:#fff;">';
     str +=              '<span id="slot2_result_'+index+'" class="conditional_span input_value page4_2_default_value">'+page4_2_default_value+'</span>';
     str +=          '</div>';
     str +=      '</ons-button>';
-    str +=      '<div onclick="delConditional('+index+')" class="text-input text-input--underbar conditional" style="width:15%; height:8vh; line-height:8vh; margin:auto; padding:0; text-align:center; border:none; float:left;">';
-    str +=          '<img src="images/remove.png" style="width:4vh; vertical-align:middle;"/>';
+    str +=      '<div onclick="delConditional('+index+')" class="text-input text-input--underbar conditional" style="width:15%; margin:auto; padding:0; text-align:center; border:none; float:left;">';
+    str +=          '<img src="images/less.png" style="width:4vh; vertical-align:middle;"/>';
     str +=      '</div>';
     str +=  '</ons-row>';
 

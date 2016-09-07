@@ -1,49 +1,30 @@
 <style>
-.list-item-container {
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
+.image {
+    position: relative;
 }
 
-.name {
-  font-weight: 500;
-  line-height: 16px;
-  font-size: 15px;
-  margin-bottom: 6px;
+.image div {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
 }
 
-.location {
-  font-size: 14px;
-  line-height: 1;
-  padding: 15px 0px 15px 15px;
+.image span {
+    width: 100%;
+    float: left;
+    clear: left;
+    color: white;
+    font: 16px/32px Helvetica, Arial, Sans-Serif; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
 }
-
-.thumbnail {
-  width: 80px;
-  height: 80px;
-  opacity: 0.4;
-  margin-bottom: 6px;
-}
-
-.desc {
-  line-height: 1.2;
-  font-size: 13px;
-}
-
-.conditional {
-width:100%; font-size:6vw; padding:0 0 0 6%; height:10%;
-}
-.conditional_span {
-padding-top:6%; display:inline-block;
-}
-.conditional_button {
-float:right; padding-top:3%; display:inline-block;
-}
-.conditional_icon{
-color: red;
-}
+    
 </style>
 
-<ons-page >
+    <ons-page>
 
     <ons-toolbar style="background:#6dccf3; height:15%;">
         <div class="left" style="height:100%; width:100%;">
@@ -82,100 +63,50 @@ color: red;
         </div>
     </ons-toolbar>
 
+
         <div style="height:10%;"></div>
         
-        <ons-row>
-            <ons-col class="info-col">
-                <div class="left" style="margin:auto;">
-                    <ons-button class="button--quiet" onclick="menu.setMainPage('page2-1.html', {closeMenu: true})">
+        <ons-list style="background:rgba(0,0,0,0)">
+            <ons-list-item style="background:rgba(0,0,0,0)">
+                <div class="left" style="float:left;">
+                    <ons-button class="button--quiet" onclick="menu.setMainPage('home.html', {closeMenu: true})">
                         <i class="ion-ios-arrow-back ons-back-button__icon" style="vertical-align: top; background-color: transparent; height: 44px; line-height: 44px; font-size: 36px; margin-left: 8px; margin-right: 2px; width: 16px; display: inline-block; padding-top: 1px;"></i>
                         <span style="vertical-align: top; display: inline-block; line-height: 44px; height: 44px;" class="back-button__label"><span class="ng-scope">Back</span></span>
                     </ons-button>
                 </div>
-            </ons-col>
-            <ons-col class="info-col">
-                <div class="right" style="font-size:4vw; float:right; padding:12% 10% 0 0;">
-                    <span class="page2_3_item_1">搜尋結果，共</span> <span id="product_sum">0</span> <span class="page2_3_item_2">樣產品</span>
+                <div class="center" style="text-align:center">
+                    <span class="index_menu_itme_5" style="margin-left:-30%;">產品比較</span>
                 </div>
-            </ons-col>
-        </ons-row>
+            </ons-list-item>
+        </ons-list>
 
-        <ons-row id="conditional_div">
-            <div id="time_result" onclick="openTimeSlot()" class="text-input text-input--underbar conditional">
-                <span class="conditional_span">2:00</span>
-                <ons-button modifier="quiet" class="conditional_button">
-                    <ons-icon icon="ion-minus-circled" size="25px" fixed-width="true" class="conditional_icon"></ons-icon>
-                </ons-button>
-            </div>
-        </ons-row>
-        
+        <ons-button modifier="chevron" onclick="menu.setMainPage('page4-2.html', {closeMenu: true})" class="image" style="background:url(images/page2-1.png) 0% 60% no-repeat; width:90%; height:22%; background-size: cover; margin:5% 5% 0 5%">
+            <div><span class="page4_item_1">塑膠系列</span></div>
+        </ons-button>
 
-        <ons-button modifier="quiet" onclick="addConditional()">
-            <ons-icon icon="ion-plus-circled" size="40px" fixed-width="true"></ons-icon>
+        <ons-button modifier="chevron" onclick="menu.setMainPage('page4-3.html', {closeMenu: true})" class="image" style="background:url(images/page2-4.png) 0% 60% no-repeat; width:90%; height:22%; background-size: cover; margin:5% 5% 0 5%">
+            <div><span class="page4_item_2">橡膠系列</span></div>
+        </ons-button>
+
+        <ons-button modifier="chevron" onclick="menu.setMainPage('page4-4.html', {closeMenu: true})" class="image" style="background:url(images/page2-2.png) 0% 55% no-repeat; width:90%; height:22%; background-size: cover; margin:5% 5% 0 5%">
+            <div><span class="page4_item_3">電子材料</span></div>
+        </ons-button>
+
+        <ons-button modifier="chevron" onclick="menu.setMainPage('page4-5.html', {closeMenu: true})" class="image" style="background:url(images/page2-3.png) 0% 75% no-repeat; width:90%; height:22%; background-size: cover;margin:5% 5% 10% 5%">
+            <div><span class="page4_item_4">複合材料</span></div>
         </ons-button>
 
     </ons-page>
 
 <script>
-
 ons.ready(function() {
     setTimeout(function() {
 
-        $(".page2_3_item_1").text(translator.getStr("page2_3_item_1"));
-        $(".page2_3_item_2").text(translator.getStr("page2_3_item_2"));
-    
+        $(".index_menu_itme_5").text(translator.getStr("index_menu_itme_5"));
+        $(".page4_item_1").text(translator.getStr("page4_item_1"));
+        $(".page4_item_2").text(translator.getStr("page4_item_2"));
+        $(".page4_item_3").text(translator.getStr("page4_item_3"));
+        $(".page4_item_4").text(translator.getStr("page4_item_4"));
     }, 10);
 });
-
-
-
-function openTimeSlot() {
-
-	var hours = {};
-	var minutes = {};
-	for( var i = 1; i <= 12; i += 1 ) {
-		hours[i] = i;
-	}
-
-	if(SpinningWheel.isExist())	SpinningWheel.destroy();
-	SpinningWheel.addSlot(hours, '', 2);
-	SpinningWheel.setCancelAction(cancel);
-	SpinningWheel.setDoneAction(timeDone);
-    //SpinningWheel.setScrollDone(scrollDone);
-	SpinningWheel.open();
-}
-
-function timeDone() {
-
-    var results = SpinningWheel.getSelectedValues();
-    $("#time_result").text(results.values.join(':'));
-	
-	localStorage.setItem("park_time", results.values.join(':'));
-	//alert(localStorage.getItem("park_time"));
-}
-
-function cancel() {
-    //document.getElementById('date_result').innerHTML = 'cancelled!';
-}
-
-function scrollDone() {
-    
-    console.log("Scroll Done");
-    openTimeSlot();
-}
-
-function addConditional() {
-
-    var str = "";
-    str += '<div id="time_result" onclick="openTimeSlot()" class="text-input text-input--underbar conditional">';
-    str += '    <span class="conditional_span">2:00</span>';
-    str += '    <ons-button modifier="quiet" class="conditional_button">';
-    str += '        <ons-icon icon="ion-minus-circled" size="25px" fixed-width="true" class="conditional_icon"></ons-icon>';
-    str += '    </ons-button>';
-    str += '</div>';
-    
-    $('#conditional_div').after(str);
-
-}
-
 </script>

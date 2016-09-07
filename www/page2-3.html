@@ -1,4 +1,13 @@
+<style>
+.list-item-container {
+  padding: 15px 0px 15px 15px;
+  display: inline-block;
+  width: 100%;
+}
 
+.thumbnail {
+  width: 80px;
+  height: 80px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
 }
@@ -11,15 +20,7 @@
 }
 
 .location {
-  font-size: 14px;<style>
-.list-item-container {
-  line-height: 1;
-  padding: 15px 0px 15px 15px;
-}
-
-.thumbnail {
-  width: 80px;
-  height: 80px;
+  font-size: 14px;
   opacity: 0.4;
   margin-bottom: 6px;
 }
@@ -131,16 +132,17 @@ function get_search() {
         //var color = item["color"];          // 白.黑色
         //var image = "images/abs.png";
         var pdf = api_url + "indexplates/chimeicorp/pdf/" + name + ".pdf";
-
-        list_str += '<ons-list-item class="list-item-container" style="text-align:left; padding-top:5%;">';
+        
+                
+        list_str += '<ons-list-item class="list-item-container" style="text-align:left; padding:5%;">';
         list_str +=     '<ul style="list-style:none;">';
-        list_str +=         '<li style="padding:0 5% 0 0; width:40%; float:left;">';
+        list_str +=         '<li style="padding:0 5% 0 0; width:50%; float:left;">';
         list_str +=             grade;
         list_str +=         '</li>';
-        list_str +=         '<li style="padding:0 5% 0 0; width:30%; float:left;">';
+        list_str +=         '<li style="padding:0 5% 0 5%; width:40%; float:left;">';
         list_str +=             '<span>'+name+'</span>';
         list_str +=         '</li>';
-        list_str +=         '<li style="padding:0 0 0 5%; width:10%; float:left;">';
+        list_str +=         '<li style="padding:0 0 0 0%; width:10%; float:left;">';
         list_str +=             '<ons-toolbar-button onclick="pdf_btn_click(\''+pdf+'\')">';
         list_str +=                 '<img src="images/btm_detail.png" width="25"/>';
         list_str +=             '</ons-toolbar-button>';

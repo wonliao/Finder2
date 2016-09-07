@@ -711,11 +711,11 @@ function openSlot1(index) {
     var items = [];
     for(var i=0; i<compareItems.length; i++) {
         
-        var index = compareItems[i][0];
+        //var index = compareItems[i][0];
         //var value = compareItems[i][1];
         //var parameter = compareItems[i][2];
 
-        var name = "page4_2_compare_" + index;
+        var name = "page4_2_compare_" + compareItems[i][0];
         var value = translator.getStr(name);
         //console.log("name("+name+") value("+value+")");
         
@@ -746,7 +746,7 @@ function openSlot2(index) {
 function setSpinningWheel(slot, index, items) {
     
     var defaultValue = 0; //Math.floor((items.length -1) / 2);
-    console.log("openSlot"+slot+" indxe("+index+") defaultValue("+defaultValue+")");
+    //console.log("openSlot"+slot+" indxe("+index+") defaultValue("+defaultValue+")");
     
     if(SpinningWheel.isExist())     SpinningWheel.destroy();
 	SpinningWheel.addSlot(items, '', defaultValue);
@@ -767,8 +767,7 @@ function slot1Done() {
     $("#slot1_result_"+index).text(results.values.join(':'));
     $("#slot1_result_"+index).attr("data-index", key);
     localStorage.setItem("slot1_selected", key);
-
-    console.log("slot1Done index("+index+") key("+key+") value("+value+")");
+    //console.log("slot1Done index("+index+") key("+key+") value("+value+")");
     
     setFilter();
 }
@@ -776,13 +775,10 @@ function slot1Done() {
 function slot2Done() {
 
     var index = SpinningWheel.getIndex();
-    console.log("slot1Done indxe("+index+")");
+    //console.log("slot1Done indxe("+index+")");
     var results = SpinningWheel.getSelectedValues();
     $("#slot2_result_"+index).text(results.values.join(':'));
 
-	//localStorage.setItem("park_time", results.values.join(':'));
-	//alert(localStorage.getItem("park_time"));
-    
     setFilter();
 }
 
@@ -854,12 +850,13 @@ function setFilter() {
         //console.log("value("+value+")");
         searchValues.push(value);
     });
-    
+
     var searchNamesStr = searchNames.toString();
     var searchValuesStr = searchValues.toString();
-    console.log("searchNamesStr("+searchNamesStr+")");
-    console.log("searchValuesStr("+searchValuesStr+")");
-    console.log("api_url("+api_url+")");
+    //console.log("searchNamesStr("+searchNamesStr+")");
+    //console.log("searchValuesStr("+searchValuesStr+")");
+    
+
     $.post(
         api_url + "indexplates/chimeicorp/get_compare.php",
         {
@@ -918,17 +915,17 @@ function setFilter() {
                     list_str += '       <li>'+item["IzodImpact23Notched"]+'</li>';
                     list_str += '       <li>'+item["IzodImpact_30Notched"]+'</li>';
                     list_str += '       <li>'+item["IzodImpact23Unnotched"]+'</li>';
-                    list_str += '       <li>'+item["IzodImpact_30Unnotched IZOD"]+'</li>';
-                    list_str += '       <li>'+item["IzodImpact23_1_8_Notched IZOD"]+'</li>';
-                    list_str += '       <li>'+item["IzodImpact_30_1_8_Notched IZOD"]+'</li>';
-                    list_str += '       <li>'+item["IzodImpact_d256_Notched IZOD"]+'</li>';
-                    list_str += '       <li>'+item["CharpyImpact23Notched Charpy"]+'</li>';
-                    list_str += '       <li>'+item["CharpyImpact_30Notched Charpy"]+'</li>';
-                    list_str += '       <li>'+item["CharpyImpact23Unnotched Charpy"]+'</li>';
-                    list_str += '       <li>'+item["CharpyImpact_30Unnotched Charpy"]+'</li>';
-                    list_str += '       <li>'+item["CharpyImpact23_1_8_Notched Charpy"]+'</li>';
-                    list_str += '       <li>'+item["CharpyImpact_30_1_8_Notched Charpy"]+'</li>';
-                    list_str += '       <li>'+item["VicatSofteningTemperature50_1G"]+'</li>';
+                    list_str += '       <li>'+item["IzodImpact_30Unnotched"]+'</li>';
+                    list_str += '       <li>'+item["IzodImpact23_1_8_Notched"]+'</li>';
+                    list_str += '       <li>'+item["IzodImpact_30_1_8_Notched"]+'</li>';
+                    list_str += '       <li>'+item["IzodImpact_d256_Notched"]+'</li>';
+                    list_str += '       <li>'+item["CharpyImpact23Notched"]+'</li>';
+                    list_str += '       <li>'+item["CharpyImpact_30Notched"]+'</li>';
+                    list_str += '       <li>'+item["CharpyImpact23Unnotched"]+'</li>';
+                    list_str += '       <li>'+item["CharpyImpact_30Unnotched"]+'</li>';
+                    list_str += '       <li>'+item["CharpyImpact23_1_8_Notched"]+'</li>';
+                    list_str += '       <li>'+item["CharpyImpact_30_1_8_Notched"]+'</li>';
+                    list_str += '       <li>'+item["VicatSofteningTemperature50_1"]+'</li>';
                     list_str += '       <li>'+item["VicatSofteningTemperature50_5"]+'</li>';
                     list_str += '       <li>'+item["VicatSofteningTemperature50_1_4"]+'</li>';
                     list_str += '       <li>'+item["VicatSofteningTemperature50_5_4"]+'</li>';

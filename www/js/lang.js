@@ -191,12 +191,22 @@ var en = {
     page4_2_compare_41: "Solution Viscosity",
 
 
-
-    // page4-3.html
-    page4_3_item_1:"",
-    page4_3_item_2:"item found",
-    
-
+    // page4-4.html
+    page4_4_features_1: "Name",
+    page4_4_features_2: "Place",
+    page4_4_features_3: "Industry",
+    page4_4_features_4: "Brand",
+    page4_4_features_5: "Grade",
+    page4_4_features_6: "Color",
+    page4_4_features_7: "Tensile Elongation",
+    page4_4_features_8: "Rockwell-Hardness",
+    page4_4_features_9: "Specific Gravity",
+    page4_4_features_10: "Vicat Softening Temp",
+    page4_4_features_11: "H.D.T",
+    page4_4_features_12: "Haze",
+    page4_4_features_13: "Water Absorption",
+    page4_4_features_14: "Flammability",
+    page4_4_features_15: "Yellow index",
 
     // home.html
     home_main_text:"bonding your moments"
@@ -393,12 +403,26 @@ var zh = {
     page4_2_compare_40: "門尼指數",
     page4_2_compare_41: "溶液黏度",
 
-    // page4-3.html
-
+    // page4-4.html
+    page4_4_features_1: "品名",
+    page4_4_features_2: "產地",
+    page4_4_features_3: "產業",
+    page4_4_features_4: "產品品牌",
+    page4_4_features_5: "等級",
+    page4_4_features_6: "顏色",
+    page4_4_features_7: "延伸率",
+    page4_4_features_8: "洛氏硬度",
+    page4_4_features_9: "比重",
+    page4_4_features_10: "軟化點",
+    page4_4_features_11: "熱變形溫度",
+    page4_4_features_12: "濁度",
+    page4_4_features_13: "吸水率",
+    page4_4_features_14: "燃燒率",
+    page4_4_features_15: "Yellow index",
 
 
     // home.html
-    home_main_text:"精彩时刻 源自奇美"
+    home_main_text:"精彩時刻 源自奇美"
 };
 
 
@@ -439,5 +463,5 @@ var language = navigator.language || navigator.userLanguage;
 var codes = language.toString().split("-");
 var gLang = codes[0];
 //alert("gLang("+gLang+")");
-//gLang = "en";
+gLang = "en";
 var translator = new Language(gLang);

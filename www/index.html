@@ -34,7 +34,7 @@
 </head>
 <body>
 
-    <ons-sliding-menu main-page="page4-2.html" menu-page="menu.html" side="right" max-slide-distance="250px" var="menu"></ons-sliding-menu>
+    <ons-sliding-menu main-page="home.html" menu-page="menu.html" side="right" max-slide-distance="250px" var="menu"></ons-sliding-menu>
 
     <!-- 側邊欄 begin -->
     <ons-template id="menu.html">
@@ -48,7 +48,7 @@
         <ons-list-item modifier="chevron" onclick="menu.setMainPage('page2-1.html', {closeMenu: true})">
           <span class="index_menu_itme_3">產品搜尋</span>
         </ons-list-item>
-        <ons-list-item modifier="chevron" onclick="menu.setMainPage('page4.html', {closeMenu: true})">
+        <ons-list-item modifier="chevron" onclick="menu.setMainPage('page4-1.html', {closeMenu: true})">
           <span class="index_menu_itme_5">產品比較</span>
         </ons-list-item>
         <ons-list-item modifier="chevron" onclick="menu.setMainPage('page3.html', {closeMenu: true})">
@@ -56,7 +56,7 @@
         </ons-list-item>
       </ons-list>
       <div style="position:absolute; bottom:2%; right:5%; color:#aaa;">
-        <span class="index_version">版本</span>：1.0.6
+        <span class="index_version">版本</span>：1.0.7
       </div>
     </ons-template>
     <!-- 側邊欄 end -->
@@ -71,6 +71,8 @@ ons.ready(function() {
         $(".index_menu_itme_3").text(translator.getStr("index_menu_itme_3"));
         $(".index_menu_itme_4").text(translator.getStr("index_menu_itme_4"));
         $(".index_menu_itme_5").text(translator.getStr("index_menu_itme_5"));
+        $(".index_version").text(translator.getStr("index_version"));
+        
     }, 10);
 });
 </script>

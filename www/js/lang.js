@@ -463,5 +463,5 @@ var language = navigator.language || navigator.userLanguage;
 var codes = language.toString().split("-");
 var gLang = codes[0];
 //alert("gLang("+gLang+")");
-gLang = "en";
+//gLang = "en";
 var translator = new Language(gLang);

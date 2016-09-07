@@ -96,7 +96,7 @@
         <ons-row>
             <ons-col class="info-col">
                 <div class="left" style="margin:auto;">
-                    <ons-button class="button--quiet" onclick="menu.setMainPage('page4-1.html', {closeMenu: true})">
+                    <ons-button class="button--quiet" onclick="menu.setMainPage('page4-1.html', {closeMenu: true, callback: closeSpinningWheel()})">
                         <i class="ion-ios-arrow-back ons-back-button__icon" style="vertical-align: top; background-color: transparent; height: 44px; line-height: 44px; font-size: 36px; margin-left: 8px; margin-right: 2px; width: 16px; display: inline-block; padding-top: 1px;"></i>
                         <span style="vertical-align: top; display: inline-block; line-height: 44px; height: 44px;" class="back-button__label"><span class="ng-scope">Back</span></span>
                     </ons-button>
@@ -111,24 +111,10 @@
             
         </ons-row>
         
-        <ons-row id="conditional_div">
-            <!--
-            <ons-row data-index="1">
-                <div onclick="openSlot1()" class="text-input text-input--underbar conditional" style="background:#F00; width:50%; height:8vh;">
-                    <span id="slot1_result" class="conditional_span">name</span>
-                </div>
-                <div onclick="openSlot2()" class="text-input text-input--underbar conditional" style="background:#0F0; width:35%; height:8vh;">
-                    <span id="slot2_result" class="conditional_span">value</span>
-                </div>
-                <div class="text-input text-input--underbar conditional" style="width:15%; height:8vh; line-height:8vh; margin:auto; padding:0; text-align:center;">
-                    <img src="images/remove.png" style="width:6vh; vertical-align:middle;"/>
-                </div>
-            </ons-row>
-            -->
-        </ons-row>
+        <ons-row id="conditional_div"></ons-row>
 
         <ons-button modifier="quiet" onclick="addConditional()">
-            <ons-icon icon="ion-plus-circled" size="40px" fixed-width="true"></ons-icon>
+            <ons-icon icon="ion-plus-circled" size="4vh" fixed-width="true"></ons-icon>
         </ons-button>
 
     <section class="cd-products-comparison-table">
@@ -213,7 +199,20 @@
 			</div> <!-- .features -->
 			
 			<div class="cd-products-wrapper">
-				<ul class="cd-products-columns"></ul>
+				<ul class="cd-products-columns">
+                    <!--
+    			    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test2</li>
+                        </ul>
+                    </li>
+                    -->
+				</ul>
 			</div>
 	
 		</div> <!-- .cd-products-table -->
@@ -244,7 +243,7 @@ ons.ready(function() {
 
         localStorage.setItem("index", 0);
     
-        //setFilter();
+        setFilter();
     }, 10);
 });
 
@@ -393,15 +392,17 @@ function addConditional() {
     var page4_2_default_value = translator.getStr("page4_2_default_value");
     
     var str = "";
-    str +=  '<ons-row id="conditional_'+index+'">';
-    str +=     '<div onclick="openSlot1('+index+')" class="text-input text-input--underbar conditional" style="width:38%; height:8vh;">';
-    str +=          '<span id="slot1_result_'+index+'" class="conditional_span input_name page4_2_default_name">'+page4_2_default_name+'</span>';
-    str +=      '</div>';
-    str +=      '<div onclick="openSlot2('+index+')" class="text-input text-input--underbar conditional" style="width:47%; height:8vh;">';
-    str +=          '<span id="slot2_result_'+index+'" class="conditional_span input_value page4_2_default_value">'+page4_2_default_value+'</span>';
-    str +=      '</div>';
-    str +=      '<div onclick="delConditional('+index+')" class="text-input text-input--underbar conditional" style="width:15%; height:8vh; line-height:8vh; margin:auto; padding:0; text-align:center;">';
-    str +=          '<img src="images/remove.png" style="width:6vh; vertical-align:middle;"/>';
+    str +=  '<ons-row id="conditional_'+index+'" style="margin-bottom:2px;">';
+    str +=      '<ons-button class="button button--large" modifier="chevron" style="width:80%; margin:0 0 0 5%;">';
+    str +=          '<div onclick="openSlot1('+index+')" class="text-input text-input--underbar conditional" style="width:48%; height:8vh; float:left; color:#fff; margin-right:2%;">';
+    str +=              '<span id="slot1_result_'+index+'" class="conditional_span input_name page4_2_default_name">'+page4_2_default_name+'</span>';
+    str +=          '</div>';
+    str +=          '<div onclick="openSlot2('+index+')" class="text-input text-input--underbar conditional" style="width:48%; height:8vh; float:left; color:#fff;">';
+    str +=              '<span id="slot2_result_'+index+'" class="conditional_span input_value page4_2_default_value">'+page4_2_default_value+'</span>';
+    str +=          '</div>';
+    str +=      '</ons-button>';
+    str +=      '<div onclick="delConditional('+index+')" class="text-input text-input--underbar conditional" style="width:15%; height:8vh; line-height:8vh; margin:auto; padding:0; text-align:center; border:none; float:left;">';
+    str +=          '<img src="images/remove.png" style="width:4vh; vertical-align:middle;"/>';
     str +=      '</div>';
     str +=  '</ons-row>';
 
@@ -443,7 +444,6 @@ function setFilter() {
     var searchValuesStr = searchValues.toString();
     //console.log("searchNamesStr("+searchNamesStr+")");
     //console.log("searchValuesStr("+searchValuesStr+")");
-    
 
     $.post(
         api_url + "indexplates/chimeicorp/get_compare.php",
@@ -452,7 +452,7 @@ function setFilter() {
             "searchValues": searchValuesStr
         },
         function( data ) {
-
+            
             //console.log(data);
             var list_str = "";
 
@@ -473,6 +473,7 @@ function setFilter() {
                 for(var key in data) {
 
                     var item = data[key];
+                    console.log('key('+key+')');
 
                     list_str += '<li class="product">';
                     list_str += '    <ul class="cd-features-list">';
@@ -577,7 +578,7 @@ function setFilter() {
                 $(".cd-products-columns").empty().append(list_str);
     
                 index = Math.floor(key) + 1;
-                var w = index * 200;
+                var w = index * 150;
                 $(".cd-products-columns").css("width", w);
                 //console.log("index("+index+") w("+w+")");
             
@@ -588,13 +589,16 @@ function setFilter() {
                     console.log("key("+key+") showFlag("+showFlag+")");
                     $('.page4_2_features_'+key).show();
                     $('.item_div_'+key).show();
-                }
-                
-                
+                }  
             }
         }, 
         "json"
     );
+}
+
+function closeSpinningWheel() {
+ 
+    if(SpinningWheel.isExist()) SpinningWheel.close();
 }
 
 </script>

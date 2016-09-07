@@ -188,7 +188,7 @@ Main Components
 .cd-products-columns .product {
   position: relative;
   float: left;
-  width: 200px;
+  width: 150px;
   text-align: center;
   -webkit-transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
   -moz-transition: opacity 0.3s, visibility 0.3s, -moz-transform 0.3s;

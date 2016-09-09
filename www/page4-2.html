@@ -119,7 +119,7 @@
         </ons-button>
         -->
         
-        <ons-row id="conditional_'+index+'" style="margin:15px 0 10px 0;">
+        <ons-row style="margin:15px 0 10px 0;">
             <div style="width:40%; margin-left:2%; padding:0;"></div>
             <div style="width:40%; margin-left:2%; padding:0;"></div>
             <div onclick="addConditional()" class="text-input text-input--underbar conditional" style="width:15%; margin:auto; padding:0; text-align:center; border:none; float:left;">
@@ -488,7 +488,7 @@ function setFilter() {
                 for(var key in data) {
 
                     var item = data[key];
-                    console.log('key('+key+')');
+                    //console.log('key('+key+')');
 
                     list_str += '<li class="product">';
                     list_str += '    <ul class="cd-features-list">';
@@ -580,9 +580,8 @@ function setFilter() {
                         
                         var item2 = item[key2];
                         if(item2 != "") {
-                            if(count == 25)
-                            console.log("key2("+key2+") count("+count+") item2("+item2+")");
-                            showFlags[count] = 1;    
+                            // console.log("key2("+key2+") count("+count+") item2("+item2+")");
+                            showFlags[count] = 1;
                         }
                         
                         count++;
@@ -601,7 +600,7 @@ function setFilter() {
                 for(var key in showFlags) {
 
                     var showFlag = showFlags[key];
-                    console.log("key("+key+") showFlag("+showFlag+")");
+                    //console.log("key("+key+") showFlag("+showFlag+")");
                     $('.page4_2_features_'+key).show();
                     $('.item_div_'+key).show();
                 }  

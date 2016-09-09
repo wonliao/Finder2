@@ -11,5 +11,15 @@
         "cordova-plugin-splashscreen@2.1.0",
         "cordova-plugin-inappbrowser@1.0.1",
         "cordova-plugin-dialogs@1.1.1"
-    ]
+    ],
+    "title-ja": "",
+    "title-en": "chimei",
+    "description-ja": "",
+    "description-en": "",
+    "category": "User Template",
+    "platform": [
+        "android",
+        "ios"
+    ],
+    "name": "generated-1473406788-57abe49bfd1734e676da14d4"
 }

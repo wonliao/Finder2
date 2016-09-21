@@ -50,6 +50,16 @@
 .conditional_icon{
     color: red;
 }
+
+.cd-products-wrapper {
+    position: relative;
+    left: 35%;
+}
+
+.myWrapper2 {
+    left: -30%;
+    /*top:-652px;*/
+}
 </style>
 
 <ons-page >
@@ -127,13 +137,10 @@
             </div>
         </ons-row>
 
-
-
-
     <section class="cd-products-comparison-table">
-    	
+
 		<div class="cd-products-table">
-			<div class="features">
+			<div class="features" style="left:35%">
 				<ul class="cd-features-list">
                     <li class="page4_2_features_1">品名</li>
                     <li class="page4_2_features_2">產地</li>
@@ -210,30 +217,98 @@
                     <li class="page4_2_features_73">溶液黏度</li>
 				</ul>
 			</div> <!-- .features -->
-			
+
 			<div class="cd-products-wrapper">
-				<ul class="cd-products-columns">
+				<ul class="cd-products-columns myColumn1">
+                    
+                    <!-- 測試用 -->
                     <!--
     			    <li class="product">
                         <ul class="cd-features-list">
-                            <li class="item_div_1">test</li>
-                        </ul>
-                    </li>
-                    <li class="product">
-                        <ul class="cd-features-list">
-                            <li class="item_div_1">test2</li>
+                            <li class="item_div_1">1test</li>
+                            <li class="item_div_2">2test</li>
+                            <li class="item_div_3">3test</li>
+                            <li class="item_div_4">4test</li>
+                            <li class="item_div_5">5test</li>
+                            <li class="item_div_6">6test</li>
+                            <li class="item_div_7">6test</li>
+                            <li class="item_div_8">7test</li>
+                            <li class="item_div_9">8test</li>
+                            <li class="item_div_10">10test</li>
                         </ul>
                     </li>
                     -->
 				</ul>
 			</div>
-	
+
+            <div class="cd-products-wrapper myWrapper2">
+    			<ul class="cd-products-columns myColumn2">
+                    
+                    <!-- 測試用 -->
+                    <!--
+    			    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">1test</li>
+                            <li class="item_div_2">2test</li>
+                            <li class="item_div_3">3test</li>
+                            <li class="item_div_4">4test</li>
+                            <li class="item_div_5">5test</li>
+                            <li class="item_div_6">6test</li>
+                            <li class="item_div_7">7test</li>
+                            <li class="item_div_8">8test</li>
+                            <li class="item_div_9">9test</li>
+                            <li class="item_div_10">10test</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test1</li>
+                            <li class="item_div_2">test1</li>
+                            <li class="item_div_3">test1</li>
+                            <li class="item_div_4">test1</li>
+                            <li class="item_div_5">test1</li>
+                            <li class="item_div_6">test1</li>
+                            <li class="item_div_7">test1</li>
+                            <li class="item_div_8">test1</li>
+                            <li class="item_div_9">test1</li>
+                            <li class="item_div_10">test1</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test2</li>
+                            <li class="item_div_2">test2</li>
+                            <li class="item_div_3">test2</li>
+                            <li class="item_div_4">test2</li>
+                            <li class="item_div_5">test2</li>
+                            <li class="item_div_6">test2</li>
+                            <li class="item_div_7">test2</li>
+                            <li class="item_div_8">test2</li>
+                            <li class="item_div_9">test2</li>
+                            <li class="item_div_10">test2</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test2</li>
+                            <li class="item_div_2">test2</li>
+                            <li class="item_div_3">test2</li>
+                            <li class="item_div_4">test2</li>
+                            <li class="item_div_5">test2</li>
+                            <li class="item_div_6">test2</li>
+                            <li class="item_div_7">test2</li>
+                            <li class="item_div_8">test2</li>
+                            <li class="item_div_9">test2</li>
+                            <li class="item_div_10">test2</li>
+                        </ul>
+                    </li>
+                    -->
+				</ul>
+			</div>
+
 		</div> <!-- .cd-products-table -->
 	</section> <!-- .cd-products-comparison-table -->
-    
-    
-        
-        
+
     </ons-page>
 
 <script>
@@ -570,14 +645,13 @@ function setFilter() {
                 }
                 
                 var showFlags = [];
-                
+
                 for(var key in data) {
 
                     var item = data[key];
-                    
                     var count = 0;
                     for(var key2 in item) {
-                        
+
                         var item2 = item[key2];
                         if(item2 != "") {
                             // console.log("key2("+key2+") count("+count+") item2("+item2+")");
@@ -587,15 +661,25 @@ function setFilter() {
                         count++;
                     }
                 }
-                
+
                 //$("#result_list").empty().append(list_str);
-                $(".cd-products-columns").empty().append(list_str);
-    
+                $(".myColumn1").empty().append(list_str);
+                $(".myColumn2").empty().append(list_str);
+
                 index = Math.floor(key) + 1;
-                var w = index * 150;
-                $(".cd-products-columns").css("width", w);
+                var _w1 = index * 150;
+                var _w2 = (index + 1) * 150;
+                $(".myColumn1").css("width", _w2);
+                $(".myColumn2").css("width", _w2);
                 //console.log("index("+index+") w("+w+")");
-            
+
+                var _h_count = -1;
+                for(var i=0; i<showFlags.length; i++) {
+                    if(showFlags[i] == 1)   _h_count++;
+                }
+                var _h = -65 * _h_count - 2;
+                $(".myWrapper2").css("top", _h+"px");
+
                 $('.cd-features-list li').hide();
                 for(var key in showFlags) {
 

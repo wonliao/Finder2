@@ -57,9 +57,16 @@
 }
 
 .myWrapper2 {
-    left: -30%;
-    /*top:-652px;*/
+    left: 0;
+    width:35%;
+    top:-652px;
 }
+
+.myColumn2 {
+    margin-left: 0px;
+}
+
+
 </style>
 
 <ons-page >
@@ -141,7 +148,7 @@
 
 		<div class="cd-products-table">
 			<div class="features" style="left:35%">
-				<ul class="cd-features-list">
+				<ul class="cd-features-list" style="background:#FFF">
                     <li class="page4_2_features_1">品名</li>
                     <li class="page4_2_features_2">產地</li>
                     <li class="page4_2_features_3">產業</li>
@@ -218,7 +225,7 @@
 				</ul>
 			</div> <!-- .features -->
 
-			<div class="cd-products-wrapper">
+			<div class="cd-products-wrapper myWrapper1">
 				<ul class="cd-products-columns myColumn1">
                     
                     <!-- 測試用 -->
@@ -231,10 +238,52 @@
                             <li class="item_div_4">4test</li>
                             <li class="item_div_5">5test</li>
                             <li class="item_div_6">6test</li>
-                            <li class="item_div_7">6test</li>
-                            <li class="item_div_8">7test</li>
-                            <li class="item_div_9">8test</li>
+                            <li class="item_div_7">7test</li>
+                            <li class="item_div_8">8test</li>
+                            <li class="item_div_9">9test</li>
                             <li class="item_div_10">10test</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test1</li>
+                            <li class="item_div_2">test1</li>
+                            <li class="item_div_3">test1</li>
+                            <li class="item_div_4">test1</li>
+                            <li class="item_div_5">test1</li>
+                            <li class="item_div_6">test1</li>
+                            <li class="item_div_7">test1</li>
+                            <li class="item_div_8">test1</li>
+                            <li class="item_div_9">test1</li>
+                            <li class="item_div_10">test1</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test2</li>
+                            <li class="item_div_2">test2</li>
+                            <li class="item_div_3">test2</li>
+                            <li class="item_div_4">test2</li>
+                            <li class="item_div_5">test2</li>
+                            <li class="item_div_6">test2</li>
+                            <li class="item_div_7">test2</li>
+                            <li class="item_div_8">test2</li>
+                            <li class="item_div_9">test2</li>
+                            <li class="item_div_10">test2</li>
+                        </ul>
+                    </li>
+                    <li class="product">
+                        <ul class="cd-features-list">
+                            <li class="item_div_1">test2</li>
+                            <li class="item_div_2">test2</li>
+                            <li class="item_div_3">test2</li>
+                            <li class="item_div_4">test2</li>
+                            <li class="item_div_5">test2</li>
+                            <li class="item_div_6">test2</li>
+                            <li class="item_div_7">test2</li>
+                            <li class="item_div_8">test2</li>
+                            <li class="item_div_9">test2</li>
+                            <li class="item_div_10">test2</li>
                         </ul>
                     </li>
                     -->
@@ -670,7 +719,7 @@ function setFilter() {
                 var _w1 = index * 150;
                 var _w2 = (index + 1) * 150;
                 $(".myColumn1").css("width", _w2);
-                $(".myColumn2").css("width", _w2);
+                $(".myColumn2").css("width", _w1);
                 //console.log("index("+index+") w("+w+")");
 
                 var _h_count = -1;

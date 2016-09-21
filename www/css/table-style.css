@@ -222,11 +222,9 @@ Main Components
   font-weight: bold;
   /*padding: 25px 40px;*/
   height:65px;
-  border-color: #e6e6e6;
-  border-style: solid;
-  border-top-width: 1px;
-  border-right-width: 1px;
-   display: flex;
+ 
+  border: #e6e6e6 1px solid;
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
@@ -258,7 +256,7 @@ Main Components
   /* set line-height value equal to font-size of text inside product cells */
   height: 65px;
   padding: 0 10px;
-  text-align: left;
+  text-align: center;
 }
 @media only screen and (min-width: 1170px) {
   .features .cd-features-list li,

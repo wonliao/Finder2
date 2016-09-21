@@ -43,5 +43,5 @@
   <preference name="SplashScreenDelay" value="1000"/>
   <preference name="Fullscreen" value="false"/>
   <preference name="WindowsStorePublisherName" value="My Name"/>
-  <preference name="WindowsStoreIdentityName" value="44fbf0ef-91a5-3eb4-b0ed-80ee29a090a1"/>
+  <preference name="WindowsStoreIdentityName" value="ec39a095-d9cd-cb3c-7b34-36210649d590"/>
 </widget>

@@ -144,7 +144,7 @@
             </div>
         </ons-row>
 
-    <section class="cd-products-comparison-table">
+    <section class="cd-products-comparison-table" style="display:none;">
 
 		<div class="cd-products-table">
 			<div class="features" style="left:35%">
@@ -380,7 +380,7 @@ ons.ready(function() {
 
         localStorage.setItem("index", 0);
     
-        setFilter();
+        //setFilter();
     }, 10);
 });
 
@@ -734,9 +734,13 @@ function setFilter() {
 
                     var showFlag = showFlags[key];
                     //console.log("key("+key+") showFlag("+showFlag+")");
-                    $('.page4_2_features_'+key).show();
-                    $('.item_div_'+key).show();
-                }  
+                    if(showFlag == 1) {
+                        $('.page4_2_features_'+key).show();
+                        $('.item_div_'+key).show();
+                    }
+                } 
+                
+                $('.cd-products-comparison-table').show();
             }
         }, 
         "json"

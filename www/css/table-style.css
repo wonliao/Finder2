@@ -133,7 +133,7 @@ Main Components
   border-top-width: 1px;
   border-bottom-width: 1px;
   background-color: #fafafa;
-  opacity: .95;
+  /*opacity: .95;*/
 }
 .cd-products-table .features::after {
   /* color gradient on the right of .features -  visible while scrolling inside the .cd-products-table */

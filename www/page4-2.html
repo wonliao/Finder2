@@ -66,6 +66,11 @@
     margin-left: 0px;
 }
 
+/*
+#f9f9f9
+#dedede
+43px
+*/
 
 </style>
 
@@ -119,36 +124,29 @@
                     </ons-button>
                 </div>
             </ons-col>
-            
+
             <ons-col class="info-col">
                 <div class="right" style="font-size:4vw; float:right; padding:12% 10% 0 0;">
                     <span class="page4_2_item_1">共</span> <span id="product_sum">0</span> <span class="page4_2_item_2">樣產品進行比對</span>
                 </div>
             </ons-col>
-            
         </ons-row>
-        
+
         <ons-row id="conditional_div"></ons-row>
 
-        <!--
-        <ons-button modifier="quiet" onclick="addConditional()" style="float:right; margin-right:1%;">
-            <ons-icon icon="ion-plus-circled" size="4vh" fixed-width="true"></ons-icon>
-        </ons-button>
-        -->
-        
-        <ons-row style="margin:15px 0 10px 0;">
-            <div style="width:40%; margin-left:2%; padding:0;"></div>
-            <div style="width:40%; margin-left:2%; padding:0;"></div>
-            <div onclick="addConditional()" class="text-input text-input--underbar conditional" style="width:15%; margin:auto; padding:0; text-align:center; border:none; float:left;">
-                <img src="images/plus.png" style="width:4vh; vertical-align:middle;"/>
+        <div style="position:relative; width:94%; margin:0 3%;">
+            <div style="position:absolute; top:0; width:100%;">
+                <hr />
             </div>
-        </ons-row>
+        </div>
 
-    <section class="cd-products-comparison-table" style="display:none;">
+        <ons-button class="button button--large" modifier="chevron" style="width:96%; margin:20px 2%;" onClick="addConditional()">新增比對條件</ons-button>
+
+    <section class="cd-products-comparison-table" style="/*display:none;*/overflow:hidden;">
 
 		<div class="cd-products-table">
 			<div class="features" style="left:35%">
-				<ul class="cd-features-list" style="background:#FFF">
+				<ul class="cd-features-list" style="background:#dedede">
                     <li class="page4_2_features_1">品名</li>
                     <li class="page4_2_features_2">產地</li>
                     <li class="page4_2_features_3">產業</li>
@@ -229,7 +227,7 @@
 				<ul class="cd-products-columns myColumn1">
                     
                     <!-- 測試用 -->
-                    <!--
+                    
     			    <li class="product">
                         <ul class="cd-features-list">
                             <li class="item_div_1">1test</li>
@@ -286,7 +284,7 @@
                             <li class="item_div_10">test2</li>
                         </ul>
                     </li>
-                    -->
+                   
 				</ul>
 			</div>
 
@@ -294,7 +292,7 @@
     			<ul class="cd-products-columns myColumn2">
                     
                     <!-- 測試用 -->
-                    <!--
+                    
     			    <li class="product">
                         <ul class="cd-features-list">
                             <li class="item_div_1">1test</li>
@@ -351,7 +349,7 @@
                             <li class="item_div_10">test2</li>
                         </ul>
                     </li>
-                    -->
+                    
 				</ul>
 			</div>
 
@@ -377,9 +375,9 @@ ons.ready(function() {
             //console.log("name("+$("." + name).text()+")");
         }
 
-
         localStorage.setItem("index", 0);
     
+        addConditional();
         //setFilter();
     }, 10);
 });
@@ -531,18 +529,20 @@ function addConditional() {
     var str = "";
     str +=  '<ons-row id="conditional_'+index+'" style="margin-bottom:5px;">';
     str +=      '<ons-button class="button button--large" modifier="chevron" style="width:40%; margin-left:2%; padding:0;">';
-    str +=          '<div onclick="openSlot1('+index+')" class="text-input text-input--underbar conditional" style="width:100%; float:left; color:#fff; margin-right:2%;">';
-    str +=              '<span id="slot1_result_'+index+'" class="conditional_span input_name page4_2_default_name">'+page4_2_default_name+'</span>';
+    str +=          '<div onclick="openSlot1('+index+')" class="conditional button--large" style="width:100%; float:left; color:#fff; margin-right:2%;">';
+    str +=              '<span id="slot1_result_'+index+'" class="conditional_span input_name page4_2_default_name button--large">'+page4_2_default_name+'</span>';
     str +=          '</div>';
     str +=      '</ons-button>';
     str +=      '<ons-button class="button button--large" modifier="chevron" style="width:40%; margin-left:2%; padding:0">';
-    str +=          '<div onclick="openSlot2('+index+')" class="text-input text-input--underbar conditional" style="width:100%; float:left; color:#fff;">';
+    str +=          '<div onclick="openSlot2('+index+')" class="conditional" style="width:100%; float:left; color:#fff;">';
     str +=              '<span id="slot2_result_'+index+'" class="conditional_span input_value page4_2_default_value">'+page4_2_default_value+'</span>';
     str +=          '</div>';
     str +=      '</ons-button>';
-    str +=      '<div onclick="delConditional('+index+')" class="text-input text-input--underbar conditional" style="width:15%; margin:auto; padding:0; text-align:center; border:none; float:left;">';
-    str +=          '<img src="images/less.png" style="width:4vh; vertical-align:middle;"/>';
-    str +=      '</div>';
+    if(index > 1) {
+        str +=      '<div onclick="delConditional('+index+')" class="text-input text-input--underbar conditional" style="width:15%; margin:auto; padding:0; text-align:center; border:none; float:left;">';
+        str +=          '<img src="images/less.png" style="width:4vh; vertical-align:middle;"/>';
+        str +=      '</div>';
+    }
     str +=  '</ons-row>';
 
     $('#conditional_div').append(str);
@@ -613,7 +613,7 @@ function setFilter() {
 
                     var item = data[key];
                     //console.log('key('+key+')');
-
+    
                     list_str += '<li class="product">';
                     list_str += '    <ul class="cd-features-list">';
                     list_str += '       <li class="item_div_1">'+item["name"]+'</li>';
@@ -730,15 +730,27 @@ function setFilter() {
                 $(".myWrapper2").css("top", _h+"px");
 
                 $('.cd-features-list li').hide();
+                
+                var count = 0;
                 for(var key in showFlags) {
 
                     var showFlag = showFlags[key];
                     //console.log("key("+key+") showFlag("+showFlag+")");
                     if(showFlag == 1) {
                         $('.page4_2_features_'+key).show();
-                        $('.item_div_'+key).show();
+                        
+                        var bg_color = "#FFF";
+                        if(count % 2 == 0)  bg_color = "#f9f9f9";
+                        count++;
+                        
+                        $('.item_div_'+key).css("background-color", bg_color).show();    
                     }
-                } 
+                }
+                
+                var _h = $('.myColumn1').height();
+                //console.log("_h("+_h+")");
+                $('.cd-products-comparison-table').css("height", _h);
+            
                 
                 $('.cd-products-comparison-table').show();
             }

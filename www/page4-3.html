@@ -381,12 +381,16 @@ function setFilter() {
                 //console.log("index("+index+") w("+w+")");
             
                 $('.cd-features-list li').hide();
+                
+                var count = 0;
                 for(var key in showFlags) {
-
-                    var showFlag = showFlags[key];
-                    console.log("key("+key+") showFlag("+showFlag+")");
-                    $('.page4_2_features_'+key).show();
-                    $('.item_div_'+key).show();
+                    
+                    var bg_color = "#FFF";
+                    if(count % 2 == 0)  bg_color = "#f9f9f9";
+                    count++;
+                    
+                    $('.page4_2_features_'+key).css("background-color", bg_color).show();
+                    $('.item_div_'+key).css("background-color", bg_color).show();
                 }
             }
         }, 
